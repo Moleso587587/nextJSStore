@@ -22,7 +22,7 @@ export default function MyApp({ Component, pageProps }) {
 
 			cost: 120,
 		},
-		"1/4 male patch cables": {
+		"0.25in male patch cables": {
 			image:
 				"https://media.guitarcenter.com/is/image/MMGS7/J01823000001000-00-720x720.jpg",
 			cost: 10,

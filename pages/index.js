@@ -1,13 +1,10 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext } from "react";
 import ItemsContext from "../contexts/ItemsContext";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ cartLength }) {
 	const items = useContext(ItemsContext);
-	const [cartAdd, dispatch] = useReducer((state, action) => {
-		return <h1>{action.type}</h1>;
-	}, cartLength);
 	return (
 		<div className={styles.grid}>
 			<Head>
@@ -17,7 +14,7 @@ export default function Home({ cartLength }) {
 			</Head>
 			{Object.keys(items).map((item, i) => {
 				return (
-					<div key={i} className={styles.gridItem}>
+					<a href={`/item/${item}`} key={i} className={styles.gridItem}>
 						<img src={items[item].image} />
 						<h3>{item}</h3>
 						<p>{items[item].cost}$</p>
@@ -35,7 +32,7 @@ export default function Home({ cartLength }) {
 						>
 							Add to cart
 						</button>
-					</div>
+					</a>
 				);
 			})}
 		</div>
