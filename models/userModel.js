@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: [true, "Must Provide password"],
 	},
+	cart: {
+		type: Map,
+		of: Number,
+	},
 });
 
 module.exports = mongoose.model("User", UserSchema);
